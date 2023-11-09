@@ -4,7 +4,7 @@ const EsquemaCadastro = require('../models/modelCadastro')
 const router = express.Router();
 
 
-router.post('/cadastrar', conectarBancoDados, async function(req, res) {
+router.post('/cadastrar', conectarBancoDados,  async function(req, res) {
     try {
         // #swagger.tags = ['CADASTRO']
         const { Id, Titulo, Paginas, Isbn, Editora} = req.body;

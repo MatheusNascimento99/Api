@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const conn = require('../middlewares/mongo')
 
 
-
+conn()
 const esquema = new mongoose.Schema(
     {
         Id:{
