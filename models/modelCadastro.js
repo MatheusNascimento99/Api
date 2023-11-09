@@ -6,11 +6,11 @@ const esquema = new mongoose.Schema(
     {
         Id:{
             Number,
-            required: 'é obrigatório!',
+            
         },
         Titulo:{
             String,
-            required: 'é obrigatório',
+            
         },
         Paginas:{
             Number,
@@ -22,7 +22,7 @@ const esquema = new mongoose.Schema(
         },
         Editora:{
             String,
-            required: 'é obrigatório',
+            
         },
 
     },

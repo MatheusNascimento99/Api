@@ -1,5 +1,5 @@
 function route(app) {
-    app.use('/cadastro', require('./cadastro.js'))
+    app.use('/cadastro', require('../routes/cadastro'))
     return;
 }
 
