@@ -2,7 +2,7 @@ function route(app) {
     // /cadastro/cadastrar
 
     // /cadastro/livro
-    app.use('/cadastro', require('../routes/cadastro'))
+    app.use('/', require('../routes/cadastro'))
     return;
 }
 

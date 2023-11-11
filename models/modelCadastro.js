@@ -1,31 +1,11 @@
 const mongoose = require('mongoose');
-const conn = require('../middlewares/mongo')
 
-
-conn()
 const esquema = new mongoose.Schema(
     {
-        Id:{
-            Number,
-            
-        },
-        Titulo:{
-            String,
-            
-        },
-        Paginas:{
-            Number,
-            
-        },
-        Isbn:{
-            String,
-            
-        },
-        Editora:{
-            String,
-            
-        },
-
+        titulo: String,
+        paginas: Number,
+        isbn: String,
+        editora:String
     },
     {
         timestamps: true
