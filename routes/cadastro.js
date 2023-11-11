@@ -2,7 +2,7 @@ const express = require('express');
 const conectarBancoDados = require ('../middlewares/configBD');
 const EsquemaCadastro = require('../models/modelCadastro')
 const router = express.Router();
-
+// /cadastrar 
 
 router.post('/cadastrar', conectarBancoDados,  async function(req, res) {
     try {
@@ -26,6 +26,7 @@ router.post('/cadastrar', conectarBancoDados,  async function(req, res) {
     }
 
 
+    
 
 })
 
