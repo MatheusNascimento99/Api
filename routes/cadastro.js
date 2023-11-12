@@ -27,8 +27,8 @@ const router = express.Router();
     // rota para buscar todos os livros
     router.get('/busca', conectarBancoDados, async function (req, res) {
         try {
-         
-          const respostaBD = await EsquemaCadastro.find(req.params.id);
+            let { titulo, paginas, isbn, editora } = req.body;
+          const respostaBD = await EsquemaCadastro.find(req.params.id, titulo, paginas, isbn, editora );
       
           res.status(200).json({
             status: "OK",
@@ -64,19 +64,33 @@ const router = express.Router();
        router.put('/editar/:id', conectarBancoDados, async function (req, res) {
         try {
             const livroId = req.params.id
-            const respostaBD = await EsquemaCadastro.findOne({_id:livroId});
             let { titulo, paginas, isbn, editora } = req.body;
             
             const livroAtualizado = await EsquemaCadastro.updateOne({_id: livroId}, {livroId, titulo, paginas, isbn, editora});
 
             res.status(200).json ({
                 status:"OK",
-                statusMensagem: "Livro atualizado!.",
-                resposta: respostaBD
+                statusMensagem: "informações atualizadas!.",
+                resposta: livroAtualizado
             })
 
         } catch (error) {
             return Error ('Erro ao atualizar, tente novamente.')
+        }
+       })
+
+       // rota para deletar livro
+       router.delete('/apagar/:id', conectarBancoDados, async function (req, res) {
+        try{
+            const livroId = req.params.id
+            const respostaBD = await EsquemaCadastro.deleteOne({_id:livroId});
+            res.status(200).json({
+                status: "OK",
+                statusMensagem: "Livro apagado!",
+                resposta: respostaBD
+            })
+        }catch {
+
         }
        })
 
