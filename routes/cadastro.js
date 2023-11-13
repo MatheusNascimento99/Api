@@ -29,11 +29,11 @@ const router = express.Router();
         try {
             let { titulo, paginas, isbn, editora } = req.body;
           const respostaBD = await EsquemaCadastro.find(req.params.id, titulo, paginas, isbn, editora );
-      
+        
           res.status(200).json({
             status: "OK",
             statusMensagem: "Todos os livros cadastrados!.",
-            resposta: respostaBD
+            resposta: respostaBD, 
           })
       
         } catch (error) {
@@ -83,7 +83,7 @@ const router = express.Router();
        router.delete('/apagar/:id', conectarBancoDados, async function (req, res) {
         try{
             const livroId = req.params.id
-            const respostaBD = await EsquemaCadastro.deleteOne({_id:livroId});
+            const respostaBD = await EsquemaCadastro.deleteOne({_id:livroId },);
             res.status(200).json({
                 status: "OK",
                 statusMensagem: "Livro apagado!",
