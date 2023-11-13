@@ -8,8 +8,8 @@ const router = express.Router();
     router.post('/cadastro', conectarBancoDados, async function (req, res) {
     try {
         // #swagger.tags = ['CADASTRO']
-        let { titulo, paginas, isbn, editora } = req.body;
-        const respostaBD = await EsquemaCadastro.create({ titulo, paginas, isbn, editora });
+        let { titulo, num_paginas, isbn, editora } = req.body;
+        const respostaBD = await EsquemaCadastro.create([{ titulo, num_paginas, isbn, editora }]);
 
         res.status(200).json({
             status: "OK",
@@ -27,8 +27,8 @@ const router = express.Router();
     // rota para buscar todos os livros
     router.get('/busca', conectarBancoDados, async function (req, res) {
         try {
-            let { titulo, paginas, isbn, editora } = req.body;
-          const respostaBD = await EsquemaCadastro.find(req.params.id, titulo, paginas, isbn, editora );
+          let { titulo, num_paginas, isbn, editora } = req.body;
+          const respostaBD = await EsquemaCadastro.find([req.params.id, titulo, num_paginas, isbn, editora] );
         
           res.status(200).json({
             status: "OK",
@@ -64,9 +64,9 @@ const router = express.Router();
        router.put('/editar/:id', conectarBancoDados, async function (req, res) {
         try {
             const livroId = req.params.id
-            let { titulo, paginas, isbn, editora } = req.body;
+            let { titulo, num_paginas, isbn, editora } = req.body;
             
-            const livroAtualizado = await EsquemaCadastro.updateOne({_id: livroId}, {livroId, titulo, paginas, isbn, editora});
+            const livroAtualizado = await EsquemaCadastro.updateOne({_id: livroId}, {livroId, titulo, num_paginas, isbn, editora});
 
             res.status(200).json ({
                 status:"OK",
