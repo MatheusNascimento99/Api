@@ -42,10 +42,10 @@ const router = express.Router();
 
 
       // rota para buscar livro individualmente por Id
-    router.get('/livro/:id', conectarBancoDados, async function (req, res) {
+    router.get('/buscaid/:id', conectarBancoDados, async function (req, res) {
         try {
           const livroId = req.params.id
-          const respostaBD = await EsquemaCadastro.findOne({id:livroId});
+          const respostaBD = await EsquemaCadastro.findOne({id:livroId},);
       
           res.status(200).json({
             status: "OK",
