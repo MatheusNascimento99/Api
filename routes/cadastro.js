@@ -42,10 +42,10 @@ const router = express.Router();
 
 
       // rota para buscar livro individualmente por Id
-    router.get('/busca/:id', conectarBancoDados, async function (req, res) {
+    router.get('/livro/:id', conectarBancoDados, async function (req, res) {
         try {
           const livroId = req.params.id
-          const respostaBD = await EsquemaCadastro.findOne({_id:livroId});
+          const respostaBD = await EsquemaCadastro.findOne({id:livroId});
       
           res.status(200).json({
             status: "OK",
@@ -60,12 +60,12 @@ const router = express.Router();
 
 
        // rota para editar o livro
-       router.put('/editar/:id', conectarBancoDados, async function (req, res) {
+       router.put('/atualizar/:id', conectarBancoDados, async function (req, res) {
         try {
             const livroId = req.params.id
             let { titulo, num_paginas, isbn, editora } = req.body;
             
-            const livroAtualizado = await EsquemaCadastro.updateOne({_id: livroId}, {livroId, titulo, num_paginas, isbn, editora});
+            const livroAtualizado = await EsquemaCadastro.updateOne({id: livroId}, {titulo, num_paginas, isbn, editora});
 
             res.status(200).json ({
                 status:"OK",
@@ -79,9 +79,10 @@ const router = express.Router();
        })
 
        // rota para deletar livro
-       router.delete('/apagar/', conectarBancoDados, async function (req, res) {
+      
+       router.delete('/apagar/:id', conectarBancoDados, async function (req, res) {
         try{
-            const respostaBD = await EsquemaCadastro.delete({id: req.params.id},);
+            const respostaBD = await EsquemaCadastro.deleteOne({id: req.params.id},);
             res.status(200).json({
                 status: "OK",
                 statusMensagem: "Livro apagado!",
