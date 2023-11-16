@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 
 const esquema = new mongoose.Schema(
     {
+        id:Number,
         titulo: String,
-        paginas: Number,
+        num_paginas: Number,
         isbn: String,
         editora:String
     },

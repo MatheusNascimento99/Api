@@ -8,8 +8,8 @@ const router = express.Router();
     router.post('/cadastro', conectarBancoDados, async function (req, res) {
     try {
         // #swagger.tags = ['CADASTRO']
-        let { titulo, num_paginas, isbn, editora } = req.body;
-        const respostaBD = await EsquemaCadastro.create([{ titulo, num_paginas, isbn, editora }]);
+        let {id, titulo, num_paginas, isbn, editora } = req.body;
+        const respostaBD = await EsquemaCadastro.create([{ id, titulo, num_paginas, isbn, editora }]);
 
         res.status(200).json({
             status: "OK",
@@ -27,8 +27,7 @@ const router = express.Router();
     // rota para buscar todos os livros
     router.get('/busca', conectarBancoDados, async function (req, res) {
         try {
-          let { titulo, num_paginas, isbn, editora } = req.body;
-          const respostaBD = await EsquemaCadastro.find([req.params.id, titulo, num_paginas, isbn, editora] );
+          const respostaBD = await EsquemaCadastro.find();
         
           res.status(200).json({
             status: "OK",
