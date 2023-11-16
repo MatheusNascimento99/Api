@@ -79,21 +79,17 @@ const router = express.Router();
        })
 
        // rota para deletar livro
-       router.delete('/apagar/:id', conectarBancoDados, async function (req, res) {
+       router.delete('/apagar/', conectarBancoDados, async function (req, res) {
         try{
-            const livroId = req.params.id
-            const respostaBD = await EsquemaCadastro.deleteOne({_id:livroId },);
+            const respostaBD = await EsquemaCadastro.delete({id: req.params.id},);
             res.status(200).json({
                 status: "OK",
                 statusMensagem: "Livro apagado!",
                 resposta: respostaBD
             })
-        }catch {
-
+        }catch (error) {
+          return Error ('Livro não encontrado, tente novamente.')
         }
        })
-
-
-
 
 module.exports = router;
