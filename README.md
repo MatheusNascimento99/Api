@@ -2,10 +2,9 @@
 Olá pessoal! Este projeto representa a construção do back-end de uma aplicação para gerenciar uma biblioteca online, possibilitando funções como cadastro, edição, busca e exclusão de livros. Integrei este back-end ao front-end já desenvolvido.
 Disponibilizei a aplicação nos ambientes de hospedagem, e ele brilha mais na Vercel. Só que, depois de um tempinho, pode dar uma paradinha, mas no localhost é só alegria. Se liga, faz um clone desse projeto aí pra dar uma conferida mais de perto. 😉
 
-## Sites Hospedeiros:
-[Netlify](https://projeto-react-dnc.vercel.app/livros)
+## Site Hospedeiro:
 
-[Vercel](https://verdant-cheesecake-46b7fb.netlify.app/)
+[Vercel]()
 
 ## Créditos ao Front-End
 O front-end original foi bolado pelo mestre [Vitor Migoto](https://github.com/vitormigoto/projeto-react-dnc). Projeto massa demais, dá um confere! 👊, o fork que eu realizei está [aqui](https://github.com/MatheusNascimento99/projeto-react-dnc).
