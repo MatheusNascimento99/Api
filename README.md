@@ -5,7 +5,9 @@ Disponibilizei a aplicação nos ambientes de hospedagem, e ele brilha mais na V
 ## Site Hospedeiro:
 
 [backend no site da Vercel](https://api-cadastro-livros.vercel.app/)  <br>
-Confira o projeto operacional clicando → [aqui](https://github.com/MatheusNascimento99/projeto-react-dnc).
+Confira o projeto operacional clicando → [aqui](https://projeto-react-dnc.vercel.app/livros).
+
+
 
 ## Créditos ao Front-End
 O front-end original foi bolado pelo mestre [Vitor Migoto](https://github.com/vitormigoto/projeto-react-dnc). Projeto massa demais, dá um confere! 👊, o fork que eu realizei está [aqui](https://projeto-react-dnc.vercel.app/livros).
