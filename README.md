@@ -5,7 +5,7 @@ Disponibilizei a aplicação nos ambientes de hospedagem, e ele brilha mais na V
 ## Site Hospedeiro:
 
 [backend no site da Vercel](https://api-cadastro-livros.vercel.app/)  <br>
-Confira o projeto operacional clicando → [aqui](https://projeto-react-dnc.vercel.app/livros).
+Confira o projeto operacional clicando → [aqui](https://projeto-react-dnc.vercel.app/).
 
 
 
